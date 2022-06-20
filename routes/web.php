@@ -26,6 +26,4 @@ Route::get('superadmin/home', [App\Http\Controllers\HomeController::class, 'supe
 Route::get('reserve/home', [App\Http\Controllers\HomeController::class, 'reserve'])->name('reserve');
 Route::get('not-received/home', [App\Http\Controllers\HomeController::class, 'notreceived'])->name('not-received-home');
 Route::get('pending/home', [App\Http\Controllers\HomeController::class, 'pending'])->name('pages.pending-home');
-
-
-
+Route::get('products', 'App\Http\Controllers\ProductController@index');

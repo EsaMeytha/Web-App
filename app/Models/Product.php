@@ -5,17 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Data extends Model
+class Product extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'id',
         'name',
         'email',
         'department',
         'leavedata',
-        'leavereason', 
-        'status'
+        'leavereason'
     ];
 
     protected $hidden = [
