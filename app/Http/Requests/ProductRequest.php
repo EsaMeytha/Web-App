@@ -27,8 +27,9 @@ class ProductRequest extends FormRequest
             'name' => 'required|max:255',
             'email' => 'required|max:255',
             'department' => 'required|max:255',
-            'leavedata' => 'required|max:255',
-            'leavereason' => 'required'
+            'leavedate' => 'required|date',
+            'leavereason' => 'required|max:255',
+            'status'
         ];
     }
 }

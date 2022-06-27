@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('department');
             $table->date('leavedate');
             $table->longText('leavereason');
-            $table->integer('status');
+            $table->ingteger('status')->default('0');
             $table->softDeletes();
             $table->timestamps();
         });

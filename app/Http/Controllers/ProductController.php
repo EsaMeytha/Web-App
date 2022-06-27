@@ -16,9 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         $items = Product::all();
-        return view('pages.products.home')->with([
-            'items' => $items
-        ]);
+        return view('pages.products.index', ['items' => $items]);
     }
 
     /**
@@ -28,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('pages.products.reserve');
+        return view('pages.products.create');
     }
 
     /**
@@ -40,9 +38,8 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = str::slug($request->name);
         Product::create($data);
-        return redirect()->route('home');
+        return redirect()->route('product.index');
     }
 
     /**

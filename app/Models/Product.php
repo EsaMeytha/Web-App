@@ -12,8 +12,9 @@ class Product extends Model
         'name',
         'email',
         'department',
-        'leavedata',
-        'leavereason'
+        'leavedate',
+        'leavereason',
+        'status'
     ];
 
     protected $hidden = [

@@ -35,15 +35,21 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="{{ route('home') }}">
-                <i class="ni ni-tv-2 text-primary"></i>
+              <a class="nav-link" href="{{ route('home') }}">
+                <i class="ni ni-tv-2 text-dark"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('reserve') }}">
+              <a class="nav-link active" href="{{ route('product.index') }}">
+                <i class="ni ni-send text-primary"></i>
+                <span class="nav-link-text">View Reserve</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('product.create') }}">
                 <i class="ni ni-send text-dark"></i>
-                <span class="nav-link-text">Reserve</span>
+                <span class="nav-link-text">Create Reserve</span>
               </a>
             </li>
         </div>
@@ -230,14 +236,6 @@
 </table>
 </tbody>
 
-<tr>
-
-<!-- <td><a href="#" class="btn btn-primary btn-sm">
-<i class="fa fa-pencil"></i></a>
-<form action="#" method="POST" class="d-inline"></form>
-@method('detele')
-</td> -->
-</tr>
 </div>
 </div>
 </div>

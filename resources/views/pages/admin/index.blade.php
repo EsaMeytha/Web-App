@@ -6,17 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>USER | APPROVAL WEBSITE</title>
+  <title>ADMIN | APPROVAL WEBSITE</title>
   <!-- Favicon -->
-  <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <link rel="icon" href="{{asset('assets/img/brand/favicon.png')}}" type="image/png">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
-  <link rel="stylesheet" href="assets/vendor/nucleo/css/nucleo.css" type="text/css">
-  <link rel="stylesheet" href="assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <link rel="stylesheet" href="{{asset('assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
+  <link rel="stylesheet" href="{{asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
   <!-- Page plugins -->
   <!-- Argon CSS -->
-  <link rel="stylesheet" href="assets/css/argon.css?v=1.2.0" type="text/css">
+  <link rel="stylesheet" href="{{asset('assets/css/argon.css?v=1.2.0" type="text/css')}}">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
         <a class="navbar-brand" href="javascript:void(0)">
-          <img src="assets/img/brand/logo.png" class="navbar-brand-img" alt="...">
+          <img src="{{asset('assets/img/brand/logo.png')}}" class="navbar-brand-img" alt="...">
         </a>
       </div>
       <div class="navbar-inner">
@@ -35,21 +35,21 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="{{ route('home') }}">
-                <i class="ni ni-tv-2 text-primary"></i>
+              <a class="nav-link" href="{{ route('admin.home') }}">
+                <i class="ni ni-tv-2 text-dark"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('product.index') }}">
-                <i class="ni ni-send text-dark"></i>
-                <span class="nav-link-text">View Reserve</span>
+              <a class="nav-link active" href="{{ route('admin.index') }}">
+                <i class="ni ni-send text-primary"></i>
+                <span class="nav-link-text">View Approved</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('product.create') }}">
+              <a class="nav-link" href="{{ route('admin.create') }}">
                 <i class="ni ni-send text-dark"></i>
-                <span class="nav-link-text">Create Reserve</span>
+                <span class="nav-link-text">Apply Approved</span>
               </a>
             </li>
         </div>
@@ -115,7 +115,7 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="assets/img/theme/team-4.jpg">
+                    <img alt="Image placeholder" src="{{asset('assets/img/theme/team-4.jpg')}}">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
                     <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
@@ -147,7 +147,7 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-0">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item"><a href="#">View Approved</a></li>
                 </ol>
               </nav>
             </div>
@@ -156,58 +156,6 @@
           <div class="row">
             <div class="col-xl-4 col-md-6">
               <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('home') }}"><b>Received</b></a></h5>
-                      <span class="h2 font-weight-bold mb-0">111</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                        <i class="ni ni-active-40"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('not-received-home') }}">Not Received</a></h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                        <i class="ni ni-chart-pie-35"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('pages.pending-home') }}">Pending</a></h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
-                        <i class="ni ni-chart-bar-32"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -217,15 +165,14 @@
     <div class="container-fluid mt--4">
     <div class="order">
       <div class="row">
-      <div class="col-12">
       <div class="card">
       <div class="card-body">
-        <h4 class="box-title">Received</h4>
+        <h4 class="box-title">Approved</h4>
       <div class="card-body">
       <table class="table">
 <thead>
-<tr>
-    <th><span class="h5 font-weight-bold mb-0">Id</span></th>
+  <tr>
+    <th><span class="h5 font-weight-bold mb-0">#</span></th>
     <th><span class="h5 font-weight-bold mb-0">Name</span></th>
     <th><span class="h5 font-weight-bold mb-0">Email</span></th>
     <th><span class="h5 font-weight-bold mb-0">Department</span></th>
@@ -233,19 +180,35 @@
     <!-- db => leavedate -->
     <th><span class="h5 font-weight-bold mb-0">Reason</span></th> 
     <!-- db => leavereason -->
-    <th><span class="h5 font-weight-bold mb-0">Status</span></th>
+    <th><span class="h5 font-weight-bold mb-0">Status</span></th> 
   </tr>
 </thead>
-</table>
-</tbody>
-<tr>
+<tbody>
+        @forelse($items as $e=>$item)
+        <tr>
+            <td>{{ $e+1 }}</td>
+            <td>{{ $item->name }}</td>
+            <td>{{ $item->email }}</td>
+            <td>{{ $item->department }}</td>
+            <td>{{ date('d M Y', strtotime($item->leavedate)) }}</td>
+            <td>{{ $item->leavereason }}</td>
+            <td>
+            @if ($item->status == 0)
+            <span class='badge badge-warning'>Pending</span>
+            @elseif ($item->status == 1)
+            <span class='badge badge-success'>Approved</span>
+            @else 
+            <span class='badge badge-danger'>Rejected</span>
+            @endif
+          </td>
+          <!-- <td><a href="{{route('rejected', $item->id)}}" class="btn btn-sm btn-danger">Rejected</a><a href="{{route('approved', ['id'=>$item->id])}}" class="btn btn-sm btn-success">Approved</a></td> -->
+            </tr>
 
-<!-- <td><a href="#" class="btn btn-primary btn-sm">
-<i class="fa fa-pencil"></i></a>
-<form action="#" method="POST" class="d-inline"></form>
-@method('detele')
-</td> -->
-</tr>
+@empty
+<tr><td colspan="6" class="text-center">Data Tidak Ditemukan</td></tr>
+@endforelse
+    </tbody>
+</table>
 </div>
 </div>
 </div>
@@ -260,16 +223,16 @@
       </footer>
   <!-- Argon Scripts -->
   <!-- Core -->
-  <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/js-cookie/js.cookie.js"></script>
-  <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-  <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+  <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('assets/vendor/js-cookie/js.cookie.js')}}"></script>
+  <script src="{{asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
+  <script src="{{asset('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
   <!-- Optional JS -->
-  <script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
-  <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
+  <script src="{{asset('assets/vendor/chart.js/dist/Chart.min.js')}}"></script>
+  <script src="{{asset('assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
   <!-- Argon JS -->
-  <script src="assets/js/argon.js?v=1.2.0"></script>
+  <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
 </body>
 
 </html>
