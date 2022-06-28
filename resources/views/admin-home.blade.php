@@ -43,7 +43,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('admin.index') }}">
                 <i class="ni ni-send text-dark"></i>
-                <span class="nav-link-text">View Approved</span>
+                <span class="nav-link-text">View All</span>
               </a>
             </li>
             <li class="nav-item">
@@ -154,55 +154,69 @@
           </div>
           <!-- Card stats -->
           <div class="row">
-            <div class="col-xl-4 col-md-6">
+            <div class="col-xl-3 col-md-6">
               <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('home') }}"><b>Received</b></a></h5>
-                      <span class="h2 font-weight-bold mb-0">111</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('pages.Atotal.Atotalapproved') }}"><b>Approved (Qty)</b></a></h5>
+                      <span class="h2 font-weight-bold mb-0">{{ $total_approved }}</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                        <i class="ni ni-active-40"></i>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-xl-4 col-md-6">
+            <div class="col-xl-3 col-md-6">
               <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('not-received-home') }}">Not Received</a></h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('pages.Atotal.Atotalrejected') }}">Rejected (Qty)</a></h5>
+                      <span class="h2 font-weight-bold mb-0">{{ $total_rejected }}</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
-                        <i class="ni ni-chart-pie-35"></i>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-xl-4 col-md-6">
+            <div class="col-xl-3 col-md-6">
               <div class="card card-stats">
-                <!-- Card body -->
+               <!-- Card body -->
+                 <!-- Card body -->
+                 <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('pages.Atotal.Atotalpending') }}">Pending (Qty)</a></h5>
+                      <span class="h2 font-weight-bold mb-0">{{ $total_pending }}</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('pages.pending-home') }}">Pending</a></h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
+                    <h5 class="card-title text-uppercase text-muted mb-0"><a href="#">All (Qty)</a></h5>
+                      <span class="h2 font-weight-bold mb-0">{{ $total_reserve }}</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
-                        <i class="ni ni-chart-bar-32"></i>
                       </div>
                     </div>
                   </div>
@@ -214,50 +228,7 @@
       </div>
     </div>
     <!-- Page content -->
-    <div class="container-fluid mt--4">
-    <div class="order">
-      <div class="row">
-      <div class="col-12">
-      <div class="card">
-      <div class="card-body">
-        <h4 class="box-title">Received</h4>
-      <div class="card-body">
-      <table class="table">
-<thead>
-<tr>
-    <th><span class="h5 font-weight-bold mb-0">Id</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Name</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Email</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Department</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Reserve Date</span></th> 
-    <!-- db => leavedate -->
-    <th><span class="h5 font-weight-bold mb-0">Reason</span></th> 
-    <!-- db => leavereason -->
-    <th><span class="h5 font-weight-bold mb-0">Status</span></th>
-  </tr>
-</thead>
-</table>
-</tbody>
-<tr>
-
-<!-- <td><a href="#" class="btn btn-primary btn-sm">
-<i class="fa fa-pencil"></i></a>
-<form action="#" method="POST" class="d-inline"></form>
-@method('detele')
-</td> -->
-</tr>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-      <!-- Footer -->
-      <footer class="footer pt-0">
-        <div class="row align-items-center justify-content-lg-between">
-        </div>
-      </footer>
+    
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>

@@ -43,7 +43,7 @@
             <li class="nav-item">
               <a class="nav-link active" href="{{ route('admin.index') }}">
                 <i class="ni ni-send text-primary"></i>
-                <span class="nav-link-text">View Approved</span>
+                <span class="nav-link-text">View All</span>
               </a>
             </li>
             <li class="nav-item">
@@ -147,7 +147,7 @@
               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-0">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                   <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">View Approved</a></li>
+                  <li class="breadcrumb-item"><a href="#">View All</a></li>
                 </ol>
               </nav>
             </div>
@@ -167,7 +167,7 @@
       <div class="row">
       <div class="card">
       <div class="card-body">
-        <h4 class="box-title">Approved</h4>
+        <h4 class="box-title">View All</h4>
       <div class="card-body">
       <table class="table">
 <thead>
@@ -176,7 +176,7 @@
     <th><span class="h5 font-weight-bold mb-0">Name</span></th>
     <th><span class="h5 font-weight-bold mb-0">Email</span></th>
     <th><span class="h5 font-weight-bold mb-0">Department</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Reserve Date</span></th> 
+    <th><span class="h5 font-weight-bold mb-0">Date</span></th> 
     <!-- db => leavedate -->
     <th><span class="h5 font-weight-bold mb-0">Reason</span></th> 
     <!-- db => leavereason -->
@@ -216,11 +216,6 @@
 </div>
 </div>
 
-      <!-- Footer -->
-      <footer class="footer pt-0">
-        <div class="row align-items-center justify-content-lg-between">
-        </div>
-      </footer>
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>

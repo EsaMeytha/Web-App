@@ -40,20 +40,48 @@ class AdminController extends Controller
     }
 
     public function rejected($id){
-        try{
             Product::where('id',$id)->update([
                 'status'=> 2
             ]);
 
-            \Session::flash('Sukses','Data berhasil tidak di Approved');
-        }catch (\Exception $item){
-            \Session::flash('gagal',$item->getMessage());
-        }
-        return redirect()->back();
+            return redirect()->back();
     }
 
     public function update(ProductRequest $request, $id)
     {
         //
+    }
+
+        public function Aviewapproved(){
+        $total_pending = Product::where('status','=','0')->count();
+        $total_approved = Product::where('status','=','1')->count();
+        $total_rejected = Product::where('status','=','2')->count();
+        $total_reserve = Product::count();
+        $items = Product::select('*')
+                        ->where('status','=','1')
+                        ->get();
+        return view('pages.Atotal.Atotalapproved',['items' => $items],compact('total_pending','total_approved','total_rejected','total_reserve'));
+    }
+
+    public function Aviewrejected(){
+        $total_pending = Product::where('status','=','0')->count();
+        $total_approved = Product::where('status','=','1')->count();
+        $total_rejected = Product::where('status','=','2')->count();
+        $total_reserve = Product::count();
+        $items = Product::select('*')
+                        ->where('status','=','2')
+                        ->get();
+        return view('pages.Atotal.Atotalrejected',['items' => $items],compact('total_pending','total_approved','total_rejected','total_reserve'));
+    }
+
+    public function Aviewpending(){
+        $total_pending = Product::where('status','=','0')->count();
+        $total_approved = Product::where('status','=','1')->count();
+        $total_rejected = Product::where('status','=','2')->count();
+        $total_reserve = Product::count();
+        $items = Product::select('*')
+                        ->where('status','=','0')
+                        ->get();
+        return view('pages.Atotal.Atotalpending',['items' => $items],compact('total_pending','total_approved','total_rejected','total_reserve'));
     }
 }

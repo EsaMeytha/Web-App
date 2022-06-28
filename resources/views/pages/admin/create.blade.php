@@ -43,7 +43,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('admin.index') }}">
                 <i class="ni ni-send text-dark"></i>
-                <span class="nav-link-text">View Approved</span>
+                <span class="nav-link-text">View All</span>
               </a>
             </li>
             <li class="nav-item">
@@ -217,11 +217,6 @@
 </div>
 </div>
 
-      <!-- Footer -->
-      <footer class="footer pt-0">
-        <div class="row align-items-center justify-content-lg-between">
-        </div>
-      </footer>
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
