@@ -1,0 +1,32 @@
+.table1 {
+    font-family: sans-serif;
+    color: #444;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #f2f5f7;
+}
+
+.table1 tbody td {
+    color: #353535;
+    border-right: 1px solid #c7ecc7;
+}
+ 
+.table1 tr th{
+    background: #35A9DB;
+    color: #fff;
+    font-weight: normal;
+}
+ 
+.table1, th, td {
+    padding: 10px 22px;
+    font-size: 13px;
+}
+
+.table1 tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+ 
+/*Tabel Responsive 1*/
+.table-container {
+    overflow: auto;
+}

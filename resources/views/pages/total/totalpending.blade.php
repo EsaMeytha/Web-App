@@ -17,6 +17,8 @@
   <!-- Page plugins -->
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{ asset ('assets/css/argon.css?v=1.2.0') }}" type="text/css">
+  <!-- CSS Table -->
+  <link rel="stylesheet" type="text/css" href="{{ asset ('assets/css/style.css') }}">
 </head>
 
 <body>
@@ -82,10 +84,6 @@
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-bell-55"></i>
-              </a>
               <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <!-- List group -->
@@ -115,7 +113,7 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="{{ asset('assets/img/theme/team-4.jpg') }}">
+                    <img alt="Image placeholder" src="{{ asset('assets/img/theme/ava.png') }}">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
                     <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
@@ -235,18 +233,19 @@
       <div class="card-body">
         <h4 class="box-title">Pending</h4>
       <div class="card-body">
-      <table class="table">
+      <div class="table-container">
+      <table class="table1">
 <thead>
   <tr>
-    <th><span class="h5 font-weight-bold mb-0">#</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Name</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Email</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Department</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Date</span></th> 
+    <th><span class="h4 font-weight-bold mb-0">#</span></th>
+    <th><span class="h4 font-weight-bold mb-0">Name</span></th>
+    <th><span class="h4 font-weight-bold mb-0">Email</span></th>
+    <th><span class="h4 font-weight-bold mb-0">Department</span></th>
+    <th><span class="h4 font-weight-bold mb-0">Date</span></th> 
     <!-- db => leavedate -->
-    <th><span class="h5 font-weight-bold mb-0">Reason</span></th> 
+    <th><span class="h4 font-weight-bold mb-0">Reason</span></th> 
     <!-- db => leavereason -->
-    <th><span class="h5 font-weight-bold mb-0">Status</span></th> 
+    <th><span class="h4 font-weight-bold mb-0">Status</span></th> 
   </tr>
 </thead>
 <tbody>

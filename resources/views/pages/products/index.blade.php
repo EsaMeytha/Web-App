@@ -17,6 +17,8 @@
   <!-- Page plugins -->
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{ asset ('assets/css/argon.css?v=1.2.0') }}" type="text/css">
+  <!-- CSS Table -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
@@ -82,10 +84,6 @@
                 <i class="ni ni-zoom-split-in"></i>
               </a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="ni ni-bell-55"></i>
-              </a>
               <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <!-- List group -->
@@ -96,9 +94,11 @@
                         <!-- Avatar -->
                         <!-- Avatar -->
                         <!-- Avatar -->
-                <!-- View all -->
-                <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
-              </div>
+                        <!-- View all -->
+                        <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
+                      </div>
+                    </div>
+                </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,6 +107,7 @@
               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default  dropdown-menu-right ">
                 <div class="row shortcuts px-4">
 
+                </div>
               </div>
             </li>
           </ul>
@@ -115,7 +116,7 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="assets/img/theme/team-4.jpg">
+                    <img alt="Image placeholder" src="assets/img/theme/ava.png">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
                     <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>
@@ -156,77 +157,78 @@
           <div class="row">
             <div class="col-xl-4 col-md-6">
               <div class="card card-stats">
+              </div>
+            </div>
+          </div>
+      <!-- Page content -->
+      <div class="container-fluid mt--4">
+        <div class="order">
+          <div class="row">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="box-title">Received</h4>
+                <div class="card-body">
+                <div class="table-container">
+                  <table class="table1">
+                    <thead>
+                      <tr>
+                        <th><span class="h4 font-weight-bold mb-0">#</span></th>
+                        <th><span class="h4 font-weight-bold mb-0">Name</span></th>
+                        <th><span class="h4 font-weight-bold mb-0">Email</span></th>
+                        <th><span class="h4 font-weight-bold mb-0">Department</span></th>
+                        <th><span class="h4 font-weight-bold mb-0">Date</span></th>
+                        <!-- db => leavedate -->
+                        <th><span class="h4 font-weight-bold mb-0">Reason</span></th>
+                        <!-- db => leavereason -->
+                        <th><span class="h4 font-weight-bold mb-0">Status</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @forelse($items as $e=>$item)
+                      <tr>
+                        <td>{{ $e+1 }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->email }}</td>
+                        <td>{{ $item->department }}</td>
+                        <td>{{ date('d M Y', strtotime($item->leavedate)) }}</td>
+                        <td>{{ $item->leavereason }}</td>
+                        <td>
+                          @if ($item->status == 0)
+                          <span class='badge badge-warning'>Pending</span>
+                          @elseif ($item->status == 1)
+                          <span class='badge badge-success'>Approved</span>
+                          @else
+                          <span class='badge badge-danger'>Rejected</span>
+                          @endif
+                        </td>
+                      </tr>
+
+                      @empty
+                      <tr>
+                        <td colspan="6" class="text-center">Data Tidak Ditemukan</td>
+                      </tr>
+                      @endforelse
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Page content -->
-    <div class="container-fluid mt--4">
-    <div class="order">
-      <div class="row">
-      <div class="card">
-      <div class="card-body">
-        <h4 class="box-title">Received</h4>
-      <div class="card-body">
-      <table class="table">
-<thead>
-  <tr>
-    <th><span class="h5 font-weight-bold mb-0">#</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Name</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Email</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Department</span></th>
-    <th><span class="h5 font-weight-bold mb-0">Reserve Date</span></th> 
-    <!-- db => leavedate -->
-    <th><span class="h5 font-weight-bold mb-0">Reason</span></th> 
-    <!-- db => leavereason -->
-    <th><span class="h5 font-weight-bold mb-0">Status</span></th> 
-  </tr>
-</thead>
-<tbody>
-        @forelse($items as $e=>$item)
-        <tr>
-            <td>{{ $e+1 }}</td>
-            <td>{{ $item->name }}</td>
-            <td>{{ $item->email }}</td>
-            <td>{{ $item->department }}</td>
-            <td>{{ date('d M Y', strtotime($item->leavedate)) }}</td>
-            <td>{{ $item->leavereason }}</td>
-            <td>
-            @if ($item->status == 0)
-            <span class='badge badge-warning'>Pending</span>
-            @elseif ($item->status == 1)
-            <span class='badge badge-success'>Approved</span>
-            @else 
-            <span class='badge badge-danger'>Rejected</span>
-            @endif
-          </td>
-          </tr>
 
-@empty
-<tr><td colspan="6" class="text-center">Data Tidak Ditemukan</td></tr>
-@endforelse
-    </tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-  <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="{{ asset ('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
-  <script src="{{ asset ('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset ('assets/vendor/js-cookie/js.cookie.js') }}"></script>
-  <script src="{{ asset ('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
-  <script src="{{ asset ('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') }}"></script>
-  <!-- Optional JS -->
-  <script src="{{ asset ('assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
-  <script src="{{ asset ('assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
-  <!-- Argon JS -->
-  <script src="{{ asset ('assets/js/argon.js?v=1.2.0') }}"></script>
+      <!-- Argon Scripts -->
+      <!-- Core -->
+      <script src="{{ asset ('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+      <script src="{{ asset ('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+      <script src="{{ asset ('assets/vendor/js-cookie/js.cookie.js') }}"></script>
+      <script src="{{ asset ('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
+      <script src="{{ asset ('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') }}"></script>
+      <!-- Optional JS -->
+      <script src="{{ asset ('assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
+      <script src="{{ asset ('assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
+      <!-- Argon JS -->
+      <script src="{{ asset ('assets/js/argon.js?v=1.2.0') }}"></script>
 </body>
 
 </html>
