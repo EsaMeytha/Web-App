@@ -158,7 +158,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('pages.total.totalapproved') }}"><b>Approved (Qty)</b></a></h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('pages.total.totalapproved') }}"><b>Approved</b></a></h5>
                       <span class="h2 font-weight-bold mb-0">{{ $total_approved }}</span>
                     </div>
                     <div class="col-auto">
@@ -175,7 +175,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('pages.total.totalrejected') }}">Rejected (Qty)</a></h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('pages.total.totalrejected') }}">Rejected</a></h5>
                       <span class="h2 font-weight-bold mb-0">{{ $total_rejected }}</span>
                     </div>
                     <div class="col-auto">
@@ -193,7 +193,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('pages.total.totalpending') }}">Pending (Qty)</a></h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0"><a href="{{ route('pages.total.totalpending') }}">Pending</a></h5>
                       <span class="h2 font-weight-bold mb-0">{{ $total_pending }}</span>
                     </div>
                     <div class="col-auto">
@@ -210,7 +210,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0"><a href="#">All (Qty)</a></h5>
+                    <h5 class="card-title text-uppercase text-muted mb-0"><a href="#">All</a></h5>
                       <span class="h2 font-weight-bold mb-0">{{ $total_reserve }}</span>
                     </div>
                     <div class="col-auto">
